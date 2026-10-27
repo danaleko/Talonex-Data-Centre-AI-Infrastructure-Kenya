@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap Index Reference
+Sitemap: https://talon-ex.com/sitemap.xml

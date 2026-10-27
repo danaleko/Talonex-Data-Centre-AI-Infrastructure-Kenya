@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Page Not Found (404) | Talonex Data Centre Kenya</title>
+    <meta name="description" content="The requested page could not be located on the Talonex digital infrastructure website." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="https://talon-ex.com/404.html" />
+
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg" />
+    <meta name="theme-color" content="#071A4A" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <header class="site-header" role="banner">
+      <div class="container header-container">
+        <div class="brand-zone">
+          <a href="./index.html" class="brand-link" aria-label="Talonex Home">
+            <img src="./assets/images/talonex-logo.svg" alt="Talonex Data Centre Kenya" class="brand-logo-img" width="190" height="38" />
+          </a>
+        </div>
+        <nav class="nav-zone" aria-label="Primary Navigation">
+          <a href="./index.html" class="nav-link">Home</a>
+          <a href="./about.html" class="nav-link">About</a>
+          <a href="./services.html" class="nav-link">Services</a>
+          <a href="./contact.html" class="nav-link">Contact Us</a>
+        </nav>
+        <div class="action-zone">
+          <a href="./contact.html" class="btn btn-primary btn-header-cta">Contact Project Team</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 404 Main Area -->
+    <main id="main-content" class="section-padding bg-soft" style="display: flex; align-items: center; min-height: 60vh;">
+      <div class="container container-narrow text-center">
+        <span class="section-kicker">Status Code 404</span>
+        <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem; color: var(--color-navy);">Page Not Located</h1>
+        <p class="lead" style="margin-bottom: 2rem;">
+          The infrastructure resource or page you are attempting to access does not exist or has been relocated.
+        </p>
+
+        <div class="button-group" style="justify-content: center;">
+          <a href="./index.html" class="btn btn-primary">Return to Homepage</a>
+          <a href="./services.html" class="btn btn-outline">Explore Proposed Services</a>
+          <a href="./contact.html" class="btn btn-secondary">Contact Us</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+          <div>
+            &copy; <span id="current-year">2026</span> Talonex. Proposed digital infrastructure initiative in Kenya.
+          </div>
+          <div>
+            <a href="./index.html" style="color: var(--color-mint);">Home</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
+    <script>
+      const yearSpan = document.getElementById('current-year');
+      if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

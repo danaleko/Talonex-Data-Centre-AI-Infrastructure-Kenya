@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#071A4A"/>
+  <!-- Geometric infrastructure node forming 'T' and data flow -->
+  <path d="M14 18 H50 V26 H36 V48 H28 V26 H14 Z" fill="none"/>
+  <path d="M14 18 C14 18, 28 18, 30 18 L26 26 L14 26 Z" fill="#60DCA3"/>
+  <path d="M34 18 C34 18, 50 18, 50 18 L50 26 L38 26 Z" fill="#006CB7"/>
+  <path d="M28 26 H36 V48 H28 Z" fill="#60DCA3"/>
+  <circle cx="32" cy="50" r="3" fill="#006CB7"/>
+</svg>
