@@ -8,11 +8,11 @@ Built with **plain semantic HTML5, modern CSS3, and lightweight vanilla JavaScri
 
 ## 1. Project Overview & Pages
 
-- **Home (`index.html`)**: Broad overview of the proposed data centre campus, AI & HPC compute zones, green energy alignment with Kenya's renewable grid, and East African digital connectivity.
-- **About (`about.html`)**: Project background, strategic alignment with Kenya's digital ecosystem, phased development methodology, core design principles, and transparent status disclosures.
-- **Services (`services.html`)**: Detailed technical overview of proposed solutions—enterprise colocation, AI/HPC high-density halls, renewable power strategy, closed-loop thermal cooling, carrier neutrality, and build-to-suit partnerships.
-- **Contact Us (`contact.html`)**: Accessible stakeholder contact form, project development office details, inquiry focus areas, and documented integration guides.
-- **404 Not Found (`404.html`)**: Branded recovery page directing users back to primary navigation targets.
+- **Home (`/`)**: Broad overview of the proposed data centre campus, AI & HPC compute zones, green energy alignment with Kenya's renewable grid, and East African digital connectivity.
+- **About (`/about`)**: Project background, strategic alignment with Kenya's digital ecosystem, phased development methodology, core design principles, and transparent status disclosures.
+- **Services (`/services`)**: Detailed technical overview of proposed solutions—enterprise colocation, AI/HPC high-density halls, renewable power strategy, closed-loop thermal cooling, carrier neutrality, and build-to-suit partnerships.
+- **Contact Us (`/contact`)**: Accessible stakeholder contact form, project development office details, inquiry focus areas, and documented integration guides.
+- **404 Not Found (`/404`)**: Branded recovery page directing users back to primary navigation targets.
 
 ---
 

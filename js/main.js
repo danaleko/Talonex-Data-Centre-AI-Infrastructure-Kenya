@@ -145,13 +145,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Highlight active nav link based on location pathname
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  // 4. Ensure clean URL in address bar if .html extension is present
+  const rawPath = window.location.pathname;
+  if (rawPath.endsWith('.html')) {
+    let cleanPath = rawPath.replace(/\.html$/, '');
+    if (cleanPath === '/index') cleanPath = '/';
+    const newUrl = cleanPath + window.location.search + window.location.hash;
+    window.history.replaceState(null, '', newUrl);
+  }
+
+  // 5. Highlight active nav link based on clean location pathname
+  const normalizedPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
   const navLinks = document.querySelectorAll('.nav-link');
+  
   navLinks.forEach((link) => {
-    const href = link.getAttribute('href');
-    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+    let href = link.getAttribute('href') || '';
+    // Strip hash/query and trailing slashes for matching
+    href = href.split('#')[0].split('?')[0].replace(/\.html$/, '').replace(/\/$/, '') || '/';
+    if (href === normalizedPath) {
       link.classList.add('active');
+    } else {
+      link.classList.remove('active');
     }
   });
 });
+

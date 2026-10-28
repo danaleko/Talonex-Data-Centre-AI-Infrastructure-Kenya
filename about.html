@@ -10,11 +10,11 @@
     <meta name="keywords" content="About Talonex, Data centre development Kenya, Digital infrastructure Kenya, Kenya data centre project, East Africa digital infrastructure, Sustainable data centres Kenya" />
     <meta name="author" content="Talonex Infrastructure Development" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://talon-ex.com/about.html" />
+    <link rel="canonical" href="https://talon-ex.com/about" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://talon-ex.com/about.html" />
+    <meta property="og:url" content="https://talon-ex.com/about" />
     <meta property="og:title" content="About Talonex | Kenya Digital Infrastructure Project" />
     <meta property="og:description" content="Learn about Talonex, a planned digital infrastructure initiative developing sustainable data centre and AI compute facilities in Kenya." />
     <meta property="og:image" content="https://talon-ex.com/assets/images/talonex-og-social.jpg" />
@@ -26,7 +26,7 @@
 
     <!-- Twitter / X Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://talon-ex.com/about.html" />
+    <meta name="twitter:url" content="https://talon-ex.com/about" />
     <meta name="twitter:title" content="About Talonex | Kenya Digital Infrastructure Project" />
     <meta name="twitter:description" content="Learn about Talonex, a planned digital infrastructure initiative developing sustainable data centre and AI compute facilities in Kenya." />
     <meta name="twitter:image" content="https://talon-ex.com/assets/images/talonex-og-social.jpg" />
@@ -49,8 +49,8 @@
       "@graph": [
         {
           "@type": "AboutPage",
-          "@id": "https://talon-ex.com/about.html#webpage",
-          "url": "https://talon-ex.com/about.html",
+          "@id": "https://talon-ex.com/about#webpage",
+          "url": "https://talon-ex.com/about",
           "name": "About Talonex | Kenya Digital Infrastructure Project",
           "description": "Learn about Talonex, a planned digital infrastructure initiative developing sustainable data centre and AI compute facilities in Kenya.",
           "isPartOf": {
@@ -62,7 +62,7 @@
         },
         {
           "@type": "BreadcrumbList",
-          "@id": "https://talon-ex.com/about.html#breadcrumbs",
+          "@id": "https://talon-ex.com/about#breadcrumbs",
           "itemListElement": [
             {
               "@type": "ListItem",
@@ -74,7 +74,7 @@
               "@type": "ListItem",
               "position": 2,
               "name": "About",
-              "item": "https://talon-ex.com/about.html"
+              "item": "https://talon-ex.com/about"
             }
           ]
         }
@@ -91,22 +91,22 @@
       <div class="container header-container">
         <!-- Zone 1: Single Brand Wordmark -->
         <div class="brand-zone">
-          <a href="./index.html" class="brand-link" aria-label="Talonex Home">
+          <a href="/" class="brand-link" aria-label="Talonex Home">
             <img src="./assets/images/talonex-logo.svg" alt="Talonex Data Centre Kenya" class="brand-logo-img" width="190" height="38" />
           </a>
         </div>
 
         <!-- Zone 2: Navigation Links -->
         <nav class="nav-zone" aria-label="Primary Navigation">
-          <a href="./index.html" class="nav-link">Home</a>
-          <a href="./about.html" class="nav-link active">About</a>
-          <a href="./services.html" class="nav-link">Services</a>
-          <a href="./contact.html" class="nav-link">Contact Us</a>
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about" class="nav-link active">About</a>
+          <a href="/services" class="nav-link">Services</a>
+          <a href="/contact" class="nav-link">Contact Us</a>
         </nav>
 
         <!-- Zone 3: Primary Action & Mobile Toggle -->
         <div class="action-zone">
-          <a href="./contact.html" class="btn btn-primary btn-header-cta">Contact Project Team</a>
+          <a href="/contact" class="btn btn-primary btn-header-cta">Contact Project Team</a>
           <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
@@ -123,7 +123,7 @@
         <div class="container">
           <!-- Breadcrumb Navigation -->
           <nav class="breadcrumbs" aria-label="Breadcrumbs">
-            <a href="./index.html">Home</a>
+            <a href="/">Home</a>
             <span class="breadcrumbs-separator" aria-hidden="true">/</span>
             <span class="breadcrumbs-current" aria-current="page">About Talonex</span>
           </nav>
@@ -148,21 +148,38 @@
       <!-- Section 1: Our Purpose & Our Approach -->
       <section class="section-padding bg-white" aria-labelledby="purpose-heading">
         <div class="container">
-          <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
-            <div class="card" style="border-top: 4px solid var(--color-blue); padding: 2.25rem;">
-              <span class="section-kicker">Core Mission</span>
-              <h2 id="purpose-heading" style="font-size: 1.65rem; margin-bottom: 1rem;">Our purpose</h2>
-              <p style="font-size: 1.05rem; line-height: 1.7; color: var(--color-slate); margin-bottom: 0;">
-                To provide scalable infrastructure that helps customers host critical data and deploy demanding compute workloads in Kenya.
-              </p>
+          <div class="split-feature" style="margin-bottom: 0;">
+            <div>
+              <span class="section-kicker">Core Mission &amp; Delivery Principle</span>
+              <h2 id="purpose-heading" style="margin-bottom: 1.25rem;">Our purpose and approach</h2>
+              
+              <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1rem; margin-bottom: 1.75rem;">
+                <div>
+                  <h3 style="font-size: 1.2rem; color: var(--color-navy); margin-bottom: 0.35rem; font-weight: 700;">Our Purpose</h3>
+                  <p style="font-size: 1.05rem; line-height: 1.7; color: var(--color-slate); margin-bottom: 0;">
+                    To provide scalable infrastructure that helps customers host critical data and deploy demanding compute workloads in Kenya.
+                  </p>
+                </div>
+                <div>
+                  <h3 style="font-size: 1.2rem; color: var(--color-navy); margin-bottom: 0.35rem; font-weight: 700;">Our Approach</h3>
+                  <p style="font-size: 1.05rem; line-height: 1.7; color: var(--color-slate); margin-bottom: 0;">
+                    We develop capacity in stages, with power, cooling and connectivity planned together around customer requirements.
+                  </p>
+                </div>
+              </div>
+
+              
             </div>
 
-            <div class="card" style="border-top: 4px solid var(--color-mint); padding: 2.25rem;">
-              <span class="section-kicker">Delivery Principle</span>
-              <h2 id="approach-heading" style="font-size: 1.65rem; margin-bottom: 1rem;">Our approach</h2>
-              <p style="font-size: 1.05rem; line-height: 1.7; color: var(--color-slate); margin-bottom: 0;">
-                We develop capacity in stages, with power, cooling and connectivity planned together around customer requirements.
-              </p>
+            <div class="split-media-container">
+              <img 
+                src="./assets/images/about2.jpeg" 
+                alt="Talonex sustainable green datacentre campus and compute infrastructure in Kenya" 
+                class="split-media-img" 
+                width="800" 
+                height="500" 
+                loading="lazy" 
+              />
             </div>
           </div>
         </div>
@@ -333,70 +350,33 @@
             </p>
           </div>
 
-          <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-            <article class="card" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15);">
-              <div class="card-header-icon" style="background-color: rgba(96, 220, 163, 0.15); color: var(--color-mint);">
-                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-              </div>
-              <h3 class="card-title" style="color: var(--color-white); font-size: 1.15rem;">Campus scale and phasing</h3>
-              <p class="card-text" style="color: #D3DFEE;">
-                Matching infrastructure investment with customer demand
-              </p>
-            </article>
-
-            <article class="card" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15);">
-              <div class="card-header-icon" style="background-color: rgba(96, 220, 163, 0.15); color: var(--color-mint);">
-                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 class="card-title" style="color: var(--color-white); font-size: 1.15rem;">Power option assessment</h3>
-              <p class="card-text" style="color: #D3DFEE;">
-                Comparing solar and grid supply across energy volumes, land needs and utility dependencies
-              </p>
-            </article>
-
-            <article class="card" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15);">
-              <div class="card-header-icon" style="background-color: rgba(96, 220, 163, 0.15); color: var(--color-mint);">
-                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                </svg>
-              </div>
-              <h3 class="card-title" style="color: var(--color-white); font-size: 1.15rem;">Land and institutional interfaces</h3>
-              <p class="card-text" style="color: #D3DFEE;">
-                Coordinating institutional engagement, site planning and utility studies
-              </p>
-            </article>
-
-            <article class="card" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15);">
-              <div class="card-header-icon" style="background-color: rgba(96, 220, 163, 0.15); color: var(--color-mint);">
-                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-              </div>
-              <h3 class="card-title" style="color: var(--color-white); font-size: 1.15rem;">Commercial development</h3>
-              <p class="card-text" style="color: #D3DFEE;">
-                Defining the infrastructure scope for prospective customers
-              </p>
-            </article>
+          <!-- Project Savanna Precedent Strip (Styled like Campus at a Glance) -->
+          <div class="metrics-strip" style="margin-top: 0; background: rgba(255, 255, 255, 0.05); box-shadow: none;">
+            <div class="metric-item">
+              <div class="metric-label">Campus Scale &amp; Phasing</div>
+              <div class="metric-highlight">Demand-Led</div>
+              <div class="metric-note">Matching phased capital investment to customer demand.</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-label">Power Option Assessment</div>
+              <div class="metric-highlight">Solar + Grid</div>
+              <div class="metric-note">Evaluating solar, battery storage and dual grid supply.</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-label">Land &amp; Institutional</div>
+              <div class="metric-highlight">Site &amp; Permits</div>
+              <div class="metric-note">Coordinating site planning, land rights and utility studies.</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-label">Commercial Development</div>
+              <div class="metric-highlight">Anchor Offtake</div>
+              <div class="metric-note">Structuring tenant capacity scope and delivery contracts.</div>
+            </div>
           </div>
-        </div>
-      </section>
 
-      <!-- Call to Action Banner -->
-      <section class="section-padding bg-white text-center" aria-labelledby="about-cta-heading">
-        <div class="container container-narrow">
-          <span class="section-kicker">Stakeholder Inquiries</span>
-          <h2 id="about-cta-heading" style="margin-bottom: 1.25rem;">Engage with the Talonex Development Team</h2>
-          <p class="lead" style="margin-bottom: 2rem;">
-            We welcome structured discussions with prospective anchor tenants, utility stakeholders, and specialist infrastructure delivery partners.
+          <p class="caveat-note text-center" style="margin-top: 1.5rem;">
+            Precedent based on Barwasim and SIC development planning experience at Konza Technopolis.
           </p>
-          <div class="button-group" style="justify-content: center;">
-            <a href="./contact.html" class="btn btn-primary">Contact Project Team</a>
-            <a href="./services.html" class="btn btn-outline">Explore Campus Services</a>
-          </div>
         </div>
       </section>
     </main>
@@ -405,60 +385,50 @@
     <footer class="site-footer" role="contentinfo">
       <div class="container">
         <div class="footer-grid">
+          <!-- Col 1: Identity & Description -->
           <div>
-            <a href="./index.html" aria-label="Talonex Home">
+            <a href="/" aria-label="Talonex Home">
               <img src="./assets/images/talonex-logo-white.svg" alt="Talonex Kenya" width="190" height="38" />
             </a>
             <p class="footer-desc">
-              Talonex is a proposed data centre and AI compute infrastructure development project in Kenya, dedicated to advancing sustainable, high-density digital infrastructure across East Africa.
+              Talonex is the project company behind a proposed 150 MW green datacentre and AI infrastructure campus in Kenya, designed for cloud, AI and enterprise growth.
             </p>
-            <div class="footer-disclosure" style="margin-top: 1.25rem;">
-              <strong>Project Notice:</strong> Talonex is currently in the development and planning phase. Specifications reflect planned engineering objectives.
-            </div>
           </div>
 
+          <!-- Col 2: Navigation Links -->
           <div>
             <div class="footer-col-title">Navigation</div>
             <ul class="footer-links">
-              <li class="footer-links-item"><a href="./index.html" class="footer-link">Home</a></li>
-              <li class="footer-links-item"><a href="./about.html" class="footer-link">About Project</a></li>
-              <li class="footer-links-item"><a href="./services.html" class="footer-link">Proposed Services</a></li>
-              <li class="footer-links-item"><a href="./contact.html" class="footer-link">Contact Us</a></li>
+              <li class="footer-links-item"><a href="/" class="footer-link">Home</a></li>
+              <li class="footer-links-item"><a href="/about" class="footer-link">About Talonex</a></li>
+              <li class="footer-links-item"><a href="/services" class="footer-link">Campus &amp; Services</a></li>
+              <li class="footer-links-item"><a href="/contact" class="footer-link">Contact Us</a></li>
             </ul>
           </div>
 
+          <!-- Col 3: Project Office & Inquiries -->
           <div>
-            <div class="footer-col-title">Focus Areas</div>
-            <ul class="footer-links">
-              <li class="footer-links-item"><a href="./services.html#colocation" class="footer-link">Enterprise Colocation</a></li>
-              <li class="footer-links-item"><a href="./services.html#ai-hpc" class="footer-link">AI &amp; HPC Infrastructure</a></li>
-              <li class="footer-links-item"><a href="./services.html#power" class="footer-link">Renewable Power Strategy</a></li>
-              <li class="footer-links-item"><a href="./services.html#cooling" class="footer-link">High-Efficiency Cooling</a></li>
-              <li class="footer-links-item"><a href="./services.html#connectivity" class="footer-link">Carrier-Neutral Routing</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <div class="footer-col-title">Stakeholder Relations</div>
+            <div class="footer-col-title">Partnership Discussions</div>
             <p style="font-size: 0.875rem; color: #A3BDDA; margin-bottom: 1rem;">
-              For inquiries regarding project milestones, land parcels, and pre-commitments:
+              Welcoming strategic investors, prospective customers and delivery partners:
             </p>
-            <a href="./contact.html" class="btn btn-mint" style="width: 100%; text-align: center;">Contact Development Team</a>
+            <a href="/contact" class="btn btn-mint" style="width: 100%; text-align: center;">Contact Us</a>
             <div class="meta-unboxed" style="margin-top: 1.25rem; color: #7A97B8;">
-              <span>Nairobi, Kenya</span>
+              <span>Voi &amp; Nairobi, Kenya</span>
               <span class="meta-separator" aria-hidden="true">·</span>
               <span>East Africa Time (EAT)</span>
             </div>
           </div>
         </div>
 
+        <!-- Footer Bottom Legal & Copyright -->
         <div class="footer-bottom">
           <div>
-            &copy; <span id="current-year">2026</span> Talonex. All rights reserved. Proposed digital infrastructure initiative in Kenya.
+            &copy; <span id="current-year">2026</span> Talonex. All rights reserved. Proposed 150 MW green datacentre campus in Kenya.
           </div>
           <div style="display: flex; gap: 1.5rem;">
-            <a href="./about.html">Project Disclosures</a>
-            <a href="./contact.html">Stakeholder Inquiries</a>
+            <a href="/about">Project Disclosures</a>
+            <a href="/contact">Stakeholder Inquiries</a>
             <a href="./sitemap.xml">XML Sitemap</a>
           </div>
         </div>

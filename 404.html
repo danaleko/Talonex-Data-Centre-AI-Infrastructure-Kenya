@@ -7,69 +7,108 @@
     <title>Page Not Found (404) | Talonex Data Centre Kenya</title>
     <meta name="description" content="The requested page could not be located on the Talonex digital infrastructure website." />
     <meta name="robots" content="noindex, follow" />
-    <link rel="canonical" href="https://talon-ex.com/404.html" />
+    <link rel="canonical" href="https://talon-ex.com/404" />
 
-    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
     <meta name="theme-color" content="#071A4A" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
     <!-- Top Navigation Bar -->
     <header class="site-header" role="banner">
       <div class="container header-container">
         <div class="brand-zone">
-          <a href="./index.html" class="brand-link" aria-label="Talonex Home">
-            <img src="./assets/images/talonex-logo.svg" alt="Talonex Data Centre Kenya" class="brand-logo-img" width="190" height="38" />
+          <a href="/" class="brand-link" aria-label="Talonex Home">
+            <img src="/assets/images/talonex-logo.svg" alt="Talonex Data Centre Kenya" class="brand-logo-img" width="190" height="38" />
           </a>
         </div>
         <nav class="nav-zone" aria-label="Primary Navigation">
-          <a href="./index.html" class="nav-link">Home</a>
-          <a href="./about.html" class="nav-link">About</a>
-          <a href="./services.html" class="nav-link">Services</a>
-          <a href="./contact.html" class="nav-link">Contact Us</a>
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about" class="nav-link">About</a>
+          <a href="/services" class="nav-link">Services</a>
+          <a href="/contact" class="nav-link">Contact Us</a>
         </nav>
         <div class="action-zone">
-          <a href="./contact.html" class="btn btn-primary btn-header-cta">Contact Project Team</a>
+          <a href="/contact" class="btn btn-primary btn-header-cta">Contact Project Team</a>
         </div>
       </div>
     </header>
 
     <!-- 404 Main Area -->
-    <main id="main-content" class="section-padding bg-soft" style="display: flex; align-items: center; min-height: 60vh;">
-      <div class="container container-narrow text-center">
-        <span class="section-kicker">Status Code 404</span>
-        <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem; color: var(--color-navy);">Page Not Located</h1>
-        <p class="lead" style="margin-bottom: 2rem;">
+    <main id="main-content" class="section-padding bg-soft" style="display: flex; align-items: center; justify-content: center; min-height: 65vh; text-align: center;">
+      <div class="container container-narrow text-center" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; margin: 0 auto;">
+        <span class="section-kicker" style="text-align: center; margin-left: auto; margin-right: auto;">Status Code 404</span>
+        <h1 style="font-size: clamp(2.25rem, 5vw, 3.5rem); margin-bottom: 1.25rem; color: var(--color-navy); text-align: center;">Page Not Located</h1>
+        <p class="lead" style="max-width: 640px; margin: 0 auto 2.25rem auto; text-align: center;">
           The infrastructure resource or page you are attempting to access does not exist or has been relocated.
         </p>
 
-        <div class="button-group" style="justify-content: center;">
-          <a href="./index.html" class="btn btn-primary">Return to Homepage</a>
-          <a href="./services.html" class="btn btn-outline">Explore Proposed Services</a>
-          <a href="./contact.html" class="btn btn-secondary">Contact Us</a>
+        <div class="button-group" style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 0; flex-wrap: wrap;">
+          <a href="/" class="btn btn-primary">Return to Homepage</a>
+          <a href="/contact" class="btn btn-secondary">Contact Us</a>
         </div>
       </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Site Footer -->
     <footer class="site-footer" role="contentinfo">
       <div class="container">
-        <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div class="footer-grid">
+          <!-- Col 1: Brand & Project Positioning -->
           <div>
-            &copy; <span id="current-year">2026</span> Talonex. Proposed digital infrastructure initiative in Kenya.
+            <a href="/" aria-label="Talonex Home">
+              <img src="/assets/images/talonex-logo-white.svg" alt="Talonex Kenya" width="190" height="38" />
+            </a>
+            <p class="footer-desc">
+              Talonex is the project company behind a proposed 150 MW green datacentre and AI infrastructure campus in Kenya, designed for cloud, AI and enterprise growth.
+            </p>
           </div>
+
+          <!-- Col 2: Navigation Links -->
           <div>
-            <a href="./index.html" style="color: var(--color-mint);">Home</a>
+            <div class="footer-col-title">Navigation</div>
+            <ul class="footer-links">
+              <li class="footer-links-item"><a href="/" class="footer-link">Home</a></li>
+              <li class="footer-links-item"><a href="/about" class="footer-link">About Talonex</a></li>
+              <li class="footer-links-item"><a href="/services" class="footer-link">Campus &amp; Services</a></li>
+              <li class="footer-links-item"><a href="/contact" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Project Office & Inquiries -->
+          <div>
+            <div class="footer-col-title">Partnership Discussions</div>
+            <p style="font-size: 0.875rem; color: #A3BDDA; margin-bottom: 1rem;">
+              Welcoming strategic investors, prospective customers and delivery partners:
+            </p>
+            <a href="/contact" class="btn btn-mint" style="width: 100%; text-align: center;">Contact Us</a>
+            <div class="meta-unboxed" style="margin-top: 1.25rem; color: #7A97B8;">
+              <span>Voi &amp; Nairobi, Kenya</span>
+              <span class="meta-separator" aria-hidden="true">·</span>
+              <span>East Africa Time (EAT)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Legal & Copyright -->
+        <div class="footer-bottom">
+          <div>
+            &copy; <span id="current-year">2026</span> Talonex. All rights reserved. Proposed 150 MW green datacentre campus in Kenya.
+          </div>
+          <div style="display: flex; gap: 1.5rem;">
+            <a href="/about">Project Disclosures</a>
+            <a href="/contact">Stakeholder Inquiries</a>
+            <a href="/sitemap.xml">XML Sitemap</a>
           </div>
         </div>
       </div>
     </footer>
 
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="/js/main.js"></script>
     <script>
       const yearSpan = document.getElementById('current-year');
       if (yearSpan) yearSpan.textContent = new Date().getFullYear();

@@ -195,6 +195,9 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .tabular-nums {
@@ -486,6 +489,10 @@ img {
   margin-bottom: var(--space-2xl);
 }
 
+.text-center {
+  text-align: center;
+}
+
 .section-header.text-center {
   text-align: center;
   max-width: 780px;
@@ -749,10 +756,32 @@ img {
   gap: 1.75rem;
 }
 
+.cards-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
 .cards-grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+}
+
+.card-dark {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-fast) ease, border-color var(--duration-fast) ease, background-color var(--duration-fast) ease;
+}
+
+.card-dark:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(96, 220, 163, 0.4);
+  transform: translateY(-2px);
 }
 
 .card {
@@ -865,11 +894,11 @@ img {
 }
 
 .split-media-container {
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   overflow: hidden;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-card);
-  background-color: var(--color-surface-soft);
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
 }
 
 .split-media-img {
@@ -877,6 +906,9 @@ img {
   height: 380px;
   object-fit: cover;
   display: block;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
 }
 
 /* Key Metrics & Strategic Pillars (Adjacency & Tabular) */
@@ -1176,8 +1208,8 @@ img {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
-  gap: 3rem;
+  grid-template-columns: 2fr 1fr 1.35fr;
+  gap: 3.5rem;
   margin-bottom: var(--space-3xl);
 }
 
@@ -1213,7 +1245,7 @@ img {
   line-height: 1.6;
   color: #A3BDDA;
   margin-top: 1rem;
-  max-width: 380px;
+  max-width: 420px;
 }
 
 .footer-disclosure {
@@ -1448,6 +1480,10 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .cards-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .nav-zone {
     display: none;
     position: absolute;
@@ -1504,6 +1540,12 @@ img {
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .cards-grid-4 {
+    grid-template-columns: 1fr;
   }
 }
 
