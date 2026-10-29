@@ -5,7 +5,9 @@ import {defineConfig, Plugin} from 'vite';
 function cleanUrlsPlugin(): Plugin {
   const routes: Record<string, string> = {
     '/about': '/about.html',
-    '/services': '/services.html',
+    '/campus': '/campus.html',
+    '/the-campus': '/campus.html',
+    '/services': '/campus.html',
     '/contact': '/contact.html',
   };
 
@@ -172,7 +174,7 @@ export default defineConfig(() => {
         input: {
           main: path.resolve(import.meta.dirname, 'index.html'),
           about: path.resolve(import.meta.dirname, 'about.html'),
-          services: path.resolve(import.meta.dirname, 'services.html'),
+          campus: path.resolve(import.meta.dirname, 'campus.html'),
           contact: path.resolve(import.meta.dirname, 'contact.html'),
           notFound: path.resolve(import.meta.dirname, '404.html'),
         },

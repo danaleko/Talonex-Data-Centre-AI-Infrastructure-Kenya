@@ -168,5 +168,37 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.remove('active');
     }
   });
+
+  // 6. Operational Excellence Accordion / Toggle
+  const opAccordions = document.querySelectorAll('.op-accordion');
+  opAccordions.forEach((accordion) => {
+    const items = accordion.querySelectorAll('.op-accordion-item');
+    items.forEach((item) => {
+      const header = item.querySelector('.op-accordion-header');
+      if (!header) return;
+
+      header.addEventListener('click', () => {
+        const isCurrentActive = item.classList.contains('active');
+
+        // Close other items in this accordion
+        items.forEach((otherItem) => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+            const otherHeader = otherItem.querySelector('.op-accordion-header');
+            if (otherHeader) otherHeader.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Toggle clicked item
+        if (isCurrentActive) {
+          item.classList.remove('active');
+          header.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('active');
+          header.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  });
 });
 

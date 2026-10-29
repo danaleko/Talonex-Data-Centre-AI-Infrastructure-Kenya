@@ -35,7 +35,7 @@ Built with **plain semantic HTML5, modern CSS3, and lightweight vanilla JavaScri
 ```text
 ├── index.html                   # Home page (Data Centre & AI Infrastructure in Kenya)
 ├── about.html                   # About page (Project Background & Governance)
-├── services.html                # Services page (Proposed Infrastructure Solutions)
+├── campus.html                  # The Campus page (Proposed Infrastructure Solutions & Architecture)
 ├── contact.html                 # Contact Us page (Accessible Inquiry Form)
 ├── 404.html                     # Branded 404 error page
 ├── sitemap.xml                  # XML sitemap for search engine crawlers
