@@ -19,6 +19,55 @@ function cleanUrlsPlugin(): Plugin {
         const url = new URL(req.url, 'http://localhost');
         const pathname = url.pathname.replace(/\/$/, '') || '/';
 
+        // Handle /api/contact and /contact.php in dev
+        if ((pathname === '/api/contact' || pathname === '/contact.php') && req.method === 'POST') {
+          let body = '';
+          req.on('data', (chunk) => { body += chunk; });
+          req.on('end', () => {
+            try {
+              let parsed: Record<string, string> = {};
+              try { parsed = JSON.parse(body); } catch {}
+              const { fullname, email, phone, message } = parsed;
+              const dataDir = path.resolve(server.config.root, 'data');
+              if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+              const dataFile = path.join(dataDir, 'enquiries.json');
+              let enquiries: unknown[] = [];
+              if (fs.existsSync(dataFile)) {
+                try { enquiries = JSON.parse(fs.readFileSync(dataFile, 'utf-8')); } catch {}
+              }
+              enquiries.unshift({
+                id: 'enq_' + Date.now(),
+                timestamp: new Date().toISOString(),
+                targetEmail: 'danaleko3@gmail.com',
+                fullname,
+                email,
+                phone: phone || 'Not provided',
+                message
+              });
+              fs.writeFileSync(dataFile, JSON.stringify(enquiries.slice(0, 100), null, 2), 'utf-8');
+              res.setHeader('Content-Type', 'application/json');
+              res.end(JSON.stringify({ success: true, message: 'Enquiry recorded successfully' }));
+            } catch {
+              res.statusCode = 500;
+              res.setHeader('Content-Type', 'application/json');
+              res.end(JSON.stringify({ success: false, error: 'Internal server error' }));
+            }
+          });
+          return;
+        }
+
+        // Handle /api/enquiries in dev
+        if (pathname === '/api/enquiries' && req.method === 'GET') {
+          const dataFile = path.resolve(server.config.root, 'data', 'enquiries.json');
+          res.setHeader('Content-Type', 'application/json');
+          if (fs.existsSync(dataFile)) {
+            res.end(fs.readFileSync(dataFile, 'utf-8'));
+          } else {
+            res.end('[]');
+          }
+          return;
+        }
+
         // 301 redirect legacy /index.html to /
         if (pathname === '/index.html') {
           res.writeHead(301, { Location: '/' + (url.search || '') });
@@ -165,10 +214,50 @@ function cleanUrlsPlugin(): Plugin {
   };
 }
 
+function suppressHmrWsPlugin(): Plugin {
+  return {
+    name: 'suppress-hmr-ws-plugin',
+    transformIndexHtml: {
+      order: 'pre',
+      handler(html) {
+        const mockScript = `<script>
+(function() {
+  var OriginalWS = window.WebSocket;
+  if (!OriginalWS) return;
+  function MockWebSocket(url, protocols) {
+    if (protocols === 'vite-hmr' || (typeof url === 'string' && (url.indexOf('token=') !== -1 || url.indexOf('vite') !== -1))) {
+      return {
+        OPEN: 1,
+        CLOSED: 3,
+        readyState: 1,
+        addEventListener: function() {},
+        removeEventListener: function() {},
+        send: function() {},
+        close: function() {},
+        onopen: null,
+        onmessage: null,
+        onerror: null,
+        onclose: null
+      };
+    }
+    return new OriginalWS(url, protocols);
+  }
+  MockWebSocket.prototype = OriginalWS.prototype;
+  MockWebSocket.OPEN = 1;
+  MockWebSocket.CLOSED = 3;
+  window.WebSocket = MockWebSocket;
+})();
+</script>`;
+        return html.replace(/<head>/i, '<head>\n    ' + mockScript);
+      },
+    },
+  };
+}
+
 export default defineConfig(() => {
   return {
     appType: 'mpa' as const,
-    plugins: [cleanUrlsPlugin()],
+    plugins: [cleanUrlsPlugin(), suppressHmrWsPlugin()],
     build: {
       rollupOptions: {
         input: {
@@ -183,9 +272,8 @@ export default defineConfig(() => {
     server: {
       port: 3000,
       host: '0.0.0.0',
-      // HMR is disabled in AI Studio via DISABLE_HMR env var.
-      hmr: process.env.DISABLE_HMR !== 'true',
-      watch: process.env.DISABLE_HMR === 'true' ? null : {},
+      hmr: false,
+      watch: null,
     },
   };
 });

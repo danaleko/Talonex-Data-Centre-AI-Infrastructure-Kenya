@@ -91,12 +91,12 @@
         <!-- Zone 1: Single Brand Wordmark -->
         <div class="brand-zone">
           <a href="/" class="brand-link" aria-label="Talonex Home">
-            <img src="./assets/images/talonex-logo.svg" alt="Talonex Data Centre Kenya" class="brand-logo-img" width="190" height="38" />
+            <img src="./assets/images/talonex-logo.svg" alt="Talonex" class="brand-logo-img" width="56" height="56" />
           </a>
         </div>
 
         <!-- Zone 2: Navigation Links -->
-        <nav class="nav-zone" aria-label="Primary Navigation">
+        <nav class="nav-zone" id="mobile-nav" aria-label="Primary Navigation">
           <a href="/" class="nav-link active">Home</a>
           <a href="/about" class="nav-link">About</a>
           <a href="/campus" class="nav-link">The Campus</a>
@@ -107,9 +107,15 @@
         <div class="action-zone">
           <a href="/contact" class="btn btn-primary btn-header-cta">Contact Project Team</a>
           <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
+            <svg class="menu-icon-bars" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="4" y1="6" x2="20" y2="6"></line>
+              <line x1="4" y1="12" x2="20" y2="12"></line>
+              <line x1="4" y1="18" x2="20" y2="18"></line>
+            </svg>
+            <svg class="menu-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
           </button>
         </div>
       </div>
@@ -290,7 +296,7 @@
       </section>
 
       <!-- 5. Who we serve -->
-      <section class="section-padding bg-white" aria-labelledby="audiences-heading">
+      <section id="who-we-serve" class="section-padding bg-white" aria-labelledby="audiences-heading">
         <div class="container">
           <div class="section-header text-center">
             <span class="section-kicker">Tailored Ecosystem</span>
@@ -406,9 +412,7 @@
               <p class="lead" style="margin-top: 1rem; margin-bottom: 1.5rem;">
                 Talonex intends to build environmental and social considerations into the project from the start: efficient use of energy and water, site-specific environmental and social assessments before construction commitments, and local participation through procurement, training and skills transfer.
               </p>
-              <div>
-                <a href="/about#responsible" class="btn btn-outline">Read about our commitments</a>
-              </div>
+
             </div>
 
             <div class="split-media-container">
@@ -454,17 +458,22 @@
     <footer class="site-footer" role="contentinfo">
       <div class="container">
         <div class="footer-grid">
-          <!-- Col 1: Brand & Project Positioning -->
-          <div>
-            <a href="/" aria-label="Talonex Home">
-              <img src="./assets/images/talonex-logo-white.svg" alt="Talonex Kenya" width="190" height="38" />
+          <!-- Col 1: Logo -->
+          <div class="footer-col-logo">
+            <a href="/" aria-label="Talonex Home" class="footer-logo-link">
+              <img src="./assets/images/talonex-footer-logo.svg" alt="Talonex" width="140" height="132" class="footer-logo-img" />
             </a>
+          </div>
+
+          <!-- Col 2: Description -->
+          <div>
+            <div class="footer-col-title">About Talonex</div>
             <p class="footer-desc">
               Talonex is the project company behind a proposed 150 MW green datacentre and AI infrastructure campus in Kenya, designed for cloud, AI and enterprise growth.
             </p>
           </div>
 
-          <!-- Col 2: Navigation Links -->
+          <!-- Col 3: Navigation -->
           <div>
             <div class="footer-col-title">Navigation</div>
             <ul class="footer-links">
@@ -475,7 +484,7 @@
             </ul>
           </div>
 
-          <!-- Col 3: Project Office & Inquiries -->
+          <!-- Col 4: Partnership Discussions -->
           <div>
             <div class="footer-col-title">Partnership Discussions</div>
             <p style="font-size: 0.875rem; color: #A3BDDA; margin-bottom: 1rem;">
@@ -484,8 +493,6 @@
             <a href="/contact" class="btn btn-mint" style="width: 100%; text-align: center;">Contact Us</a>
             <div class="meta-unboxed" style="margin-top: 1.25rem; color: #7A97B8;">
               <span>Voi &amp; Nairobi, Kenya</span>
-              <span class="meta-separator" aria-hidden="true">·</span>
-              <span>East Africa Time (EAT)</span>
             </div>
           </div>
         </div>
@@ -493,12 +500,7 @@
         <!-- Footer Bottom Legal & Copyright -->
         <div class="footer-bottom">
           <div>
-            &copy; <span id="current-year">2026</span> Talonex. All rights reserved. Proposed 150 MW green datacentre campus in Kenya.
-          </div>
-          <div style="display: flex; gap: 1.5rem;">
-            <a href="/about">Project Disclosures</a>
-            <a href="/contact">Stakeholder Inquiries</a>
-            <a href="./sitemap.xml">XML Sitemap</a>
+            &copy; <span id="current-year">2026</span> Talonex. All rights reserved.
           </div>
         </div>
       </div>
