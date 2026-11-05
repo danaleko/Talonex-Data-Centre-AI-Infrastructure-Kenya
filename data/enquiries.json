@@ -1,47 +1,11 @@
 [
   {
-    "id": "enq_1793909570936",
-    "timestamp": "2026-11-05T20:12:50.936Z",
+    "id": "enq_1793910149667",
+    "timestamp": "2026-11-05T20:22:29.667Z",
     "targetEmail": "danaleko3@gmail.com",
     "fullname": "Jane Doe",
     "email": "jane@example.com",
     "phone": "+254700000000",
-    "message": "Looking forward to working with Talonex"
-  },
-  {
-    "id": "enq_1793905480283",
-    "timestamp": "2026-11-05T19:04:40.283Z",
-    "targetEmail": "danaleko3@gmail.com",
-    "fullname": "Dan Wekulo",
-    "email": "danaleko3@gmail.com",
-    "phone": "+254713119637",
-    "message": "Testing Truehost contact.php flow"
-  },
-  {
-    "id": "enq_1793786094255",
-    "timestamp": "2026-11-04T09:54:54.255Z",
-    "targetEmail": "danaleko3@gmail.com",
-    "fullname": "Dan Wekulo",
-    "email": "danaleko3@gmail.com",
-    "phone": "+254 713 119637",
-    "message": "Testing verified routing to danaleko3@gmail.com"
-  },
-  {
-    "id": "enq_1793784669954",
-    "timestamp": "2026-11-04T09:31:09.953Z",
-    "targetEmail": "danaleko3@gmail.com",
-    "fullname": "Dan Wekulo",
-    "email": "danaleko3@gmail.com",
-    "phone": "+254713119637",
-    "message": "Test message"
-  },
-  {
-    "id": "enq_1793784404047",
-    "timestamp": "2026-11-04T09:26:44.047Z",
-    "targetEmail": "danaleko3@gmail.com",
-    "fullname": "Dan Wekulo",
-    "email": "danaleko3@gmail.com",
-    "phone": "+254713119637",
     "message": "Test message"
   }
 ]
