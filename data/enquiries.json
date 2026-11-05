@@ -1,5 +1,14 @@
 [
   {
+    "id": "enq_1793909570936",
+    "timestamp": "2026-11-05T20:12:50.936Z",
+    "targetEmail": "danaleko3@gmail.com",
+    "fullname": "Jane Doe",
+    "email": "jane@example.com",
+    "phone": "+254700000000",
+    "message": "Looking forward to working with Talonex"
+  },
+  {
     "id": "enq_1793905480283",
     "timestamp": "2026-11-05T19:04:40.283Z",
     "targetEmail": "danaleko3@gmail.com",
