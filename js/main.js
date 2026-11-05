@@ -3,8 +3,8 @@
  * Vanilla JavaScript Functionality
  * - Accessible mobile navigation drawer
  * - Header scroll state observer
- * - Form validation and documented submission handler
  * - Active page link highlighting
+ * - Scroll-triggered reveal animations
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -70,164 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll();
   }
 
-  // 3. Contact Form Validation and Mock Handler
-  const contactForm = document.getElementById('talonex-contact-form');
-  if (contactForm) {
-    const formAlert = document.getElementById('form-status-alert');
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const nextUrlInput = document.getElementById('form-next-url');
 
-    // Populate fallback return URL for native submission
-    if (nextUrlInput) {
-      nextUrlInput.value = window.location.origin + window.location.pathname + '?status=success';
-    }
-
-    // Check if redirected back after fallback submission
-    const urlParams = new URLSearchParams(window.location.search);
-    if ((urlParams.get('status') === 'success' || urlParams.get('submitted') === 'true') && formAlert) {
-      formAlert.className = 'form-status-alert success';
-      formAlert.innerHTML = `
-        <div>
-          <strong>Enquiry Transmitted Successfully</strong>
-          <p style="margin-top:0.35rem; margin-bottom:0; font-size:0.875rem; line-height:1.5;">
-            Thank you for contacting Talonex. Your enquiry has been received and our project team will review your parameters and follow up shortly.
-          </p>
-        </div>
-      `;
-      formAlert.style.display = 'flex';
-      formAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      window.history.replaceState({}, document.title, window.location.pathname);
-    }
-
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      // Clear previous states
-      let hasErrors = false;
-      const requiredInputs = contactForm.querySelectorAll('[required]');
-      
-      requiredInputs.forEach((input) => {
-        const errorElement = document.getElementById(`${input.id}-error`);
-        if (!input.value.trim()) {
-          input.setAttribute('aria-invalid', 'true');
-          if (errorElement) errorElement.classList.add('visible');
-          hasErrors = true;
-        } else {
-          input.setAttribute('aria-invalid', 'false');
-          if (errorElement) errorElement.classList.remove('visible');
-        }
-      });
-
-      // Email format validation
-      const emailInput = document.getElementById('email');
-      const emailError = document.getElementById('email-error');
-      if (emailInput && emailInput.value.trim()) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(emailInput.value.trim())) {
-          emailInput.setAttribute('aria-invalid', 'true');
-          if (emailError) {
-            emailError.textContent = 'Please enter a valid email address.';
-            emailError.classList.add('visible');
-          }
-          hasErrors = true;
-        }
-      }
-
-      if (hasErrors) {
-        if (formAlert) {
-          formAlert.className = 'form-status-alert error';
-          formAlert.textContent = 'Please correct the highlighted fields before submitting.';
-          formAlert.style.display = 'flex';
-          formAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-        return;
-      }
-
-      // Check honeypot field (anti-spam drop)
-      const honeyField = contactForm.querySelector('input[name="_honey"]');
-      if (honeyField && honeyField.value.trim() !== '') {
-        contactForm.reset();
-        return;
-      }
-
-      // UI state during submission
-      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '<span>Send Message</span>';
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = `
-          <span>Sending enquiry...</span>
-          <svg class="spinner-icon" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <circle cx="12" cy="12" r="10" stroke-width="3" stroke="currentColor" stroke-dasharray="32" stroke-linecap="round" fill="none" opacity="0.3"></circle>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 2a10 10 0 0 1 10 10"></path>
-          </svg>
-        `;
-      }
-
-      const fullnameVal = (contactForm.querySelector('#fullname')?.value || '').trim();
-      const emailVal = (contactForm.querySelector('#email')?.value || '').trim();
-      const phoneVal = (contactForm.querySelector('#phone')?.value || '').trim();
-      const messageVal = (contactForm.querySelector('#message')?.value || '').trim();
-
-      const payload = {
-        fullname: fullnameVal,
-        email: emailVal,
-        phone: phoneVal,
-        message: messageVal
-      };
-
-      try {
-        const response = await fetch('/contact.php', {
-          method: 'POST',
-          headers: { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        });
-
-        const result = await response.json().catch(() => ({}));
-
-        if (response.ok && (result.success === 'true' || result.success === true || response.status === 200)) {
-          if (formAlert) {
-            formAlert.className = 'form-status-alert success';
-            formAlert.style.display = 'flex';
-            formAlert.innerHTML = `
-              <div>
-                <strong>Enquiry Transmitted Successfully</strong>
-                <p style="margin-top:0.35rem; margin-bottom:0; font-size:0.875rem; line-height:1.5;">
-                  Thank you for contacting Talonex. Your enquiry has been received and our project team will review your parameters and follow up shortly.
-                </p>
-              </div>
-            `;
-            formAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }
-          contactForm.reset();
-        } else {
-          // If AJAX response is not 200, submit form normally to /contact.php
-          contactForm.submit();
-          return;
-        }
-      } catch (err) {
-        console.warn('Network issue on fetch, submitting form natively:', err);
-        contactForm.submit();
-        return;
-      } finally {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalBtnHtml;
-        }
-      }
-    });
-
-    // Real-time error dismissal on input
-    contactForm.querySelectorAll('input, select, textarea').forEach((field) => {
-      field.addEventListener('input', () => {
-        field.setAttribute('aria-invalid', 'false');
-        const errorElement = document.getElementById(`${field.id}-error`);
-        if (errorElement) errorElement.classList.remove('visible');
-      });
-    });
-  }
 
   // 4. Ensure clean URL in address bar if .html extension is present
   const rawPath = window.location.pathname;
@@ -300,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '.metrics-strip',
       '.dev-table-wrapper',
       '.experience-card',
-      '.contact-form-wrapper',
+      '.contact-cards-container > div',
       '.op-excellence-grid > div'
     ];
 
@@ -308,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Apply subtle rhythmic stagger delays (60ms) to adjacent siblings within multi-item grids
     const gridContainers = document.querySelectorAll(
-      '.cards-grid-2, .cards-grid-3, .cards-grid-4, .arch-grid, .stage-grid, .structure-trio-row, .split-feature, .op-excellence-grid'
+      '.cards-grid-2, .cards-grid-3, .cards-grid-4, .arch-grid, .stage-grid, .structure-trio-row, .split-feature, .op-excellence-grid, .contact-cards-container'
     );
     gridContainers.forEach((container) => {
       Array.from(container.children).forEach((child, index) => {
