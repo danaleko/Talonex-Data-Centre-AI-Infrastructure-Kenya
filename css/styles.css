@@ -1014,6 +1014,10 @@ img {
   margin-bottom: 0;
 }
 
+.card-dark .structure-card-text {
+  color: #C9D8EC;
+}
+
 /* Bullets in dark card */
 .structure-bullets-list {
   display: flex;
