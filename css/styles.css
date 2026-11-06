@@ -1014,8 +1014,10 @@ img {
   margin-bottom: 0;
 }
 
-.card-dark .structure-card-text {
-  color: #C9D8EC;
+.card-dark .structure-card-text,
+.structure-trio-card.card-dark .structure-card-text,
+.structure-trio-card.card-dark p {
+  color: #E2E8F0 !important;
 }
 
 /* Bullets in dark card */
