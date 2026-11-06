@@ -1644,7 +1644,7 @@ img {
 .contact-divider {
   border-top: 1px solid var(--color-border);
   padding-top: 1.25rem;
-  margin-top: auto;
+  margin-top: 1.25rem;
 }
 
 .contact-field-group {
