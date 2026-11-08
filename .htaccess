@@ -44,6 +44,8 @@ ErrorDocument 404 /404.html
     RewriteRule ^index\.html$ / [R=301,L]
 
     # C. Redirect direct requests for *.html to clean extensionless URLs (e.g. /about.html -> /about)
+    # Exclude Google site verification files so Google can verify ownership directly
+    RewriteCond %{REQUEST_URI} !^/google[a-zA-Z0-9_-]+\.html$ [NC]
     RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+)\.html\ HTTP/
     RewriteRule ^([^.]+)\.html$ /$1 [R=301,L]
 
